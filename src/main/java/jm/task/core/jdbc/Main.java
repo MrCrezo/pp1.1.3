@@ -7,7 +7,7 @@ import jm.task.core.jdbc.util.Util;
 
 public class Main {
     public static void main(String[] args) {
-        Util.getConnection();
+        Util.getSessionFactory();
         UserServiceImpl userService = new UserServiceImpl();
 
         userService.createUsersTable();
@@ -19,9 +19,9 @@ public class Main {
 
         System.out.println(userService.getAllUsers());
 
-        //userService.cleanUsersTable();
+        userService.cleanUsersTable();
 
-      //  userService.dropUsersTable();
+        userService.dropUsersTable();
 
 
     }
